@@ -1,13 +1,6 @@
 // The prime factors of 13195 are 5, 7, 13 and 29.
 
 // What is the largest prime factor of the number 600851475143 ?
-// for (let i = 2; i < number; i++) {
-//   if (number % i == 0) {
-//       isPrime = false;
-//       break;
-//   }
-// }
-
 
 function isPrime(number) {
   let isPrime = true
@@ -22,19 +15,15 @@ function isPrime(number) {
 }
 
 function largestPrimeFactor(input){
-  //make a list of primes less than the number
-    // check if it's a prime by seeing if it's divisible by any number between 2 - itself. if it's divisible by one, exit loop early. If not divisible by any, add it to the list of primes
-  // loop through primes, & if the number is cleanly divisible by that prime, track that prime as the current largest
+  //loop through every prime less than the input
+  // if the number is cleanly divisible by that prime, track that prime as the current largest
   // return largest
 
   let highest = 1
   let current = input
   while (current > 1) {
-    // let lastPrime = 1
-    // find the next prime
     for (let i = highest; i <= current; i++){
-      // if current is divisble by that prime, catch it as the highest & make current the result
-      // console.log(i)
+      // if current is divisble by that prime, catch it as the highest & make current the result. Shorten the number of calculations I need to run every time I hit a prime.
       if (isPrime(i) == true) {
         if (current%i == 0) {
           highest = i
